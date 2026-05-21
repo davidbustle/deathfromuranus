@@ -370,7 +370,7 @@ nav.scrolled {
 
 .social-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -440,6 +440,14 @@ nav.scrolled {
 .discord:hover { border-color: #5865F2; box-shadow: 0 0 15px rgba(88, 101, 242, 0.5); }
 .discord .hover-glow { background: #5865F2; }
 .discord:hover i { color: #5865F2; }
+
+.tiktok:hover { border-color: #ff0050; box-shadow: 0 0 15px rgba(255, 0, 80, 0.5); }
+.tiktok .hover-glow { background: #ff0050; }
+.tiktok:hover i { color: #00f2fe; text-shadow: 2px 2px 0px #ff0050; }
+
+.instagram:hover { border-color: #E1306C; box-shadow: 0 0 15px rgba(225, 48, 108, 0.5); }
+.instagram .hover-glow { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.instagram:hover i { color: #fff; text-shadow: 0 0 5px #E1306C; }
 
 
 /* Sections Common */
