@@ -28,6 +28,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     this.classList.add('active');
                 }
                 
+                // Close mobile menu if open
+                const navRight = document.querySelector('.nav-right');
+                if(navRight && navRight.classList.contains('active')) {
+                    navRight.classList.remove('active');
+                }
+                
                 // Scroll to element
                 window.scrollTo({
                     top: targetElement.offsetTop - 80, // Offset for navbar
@@ -37,26 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Mobile menu toggle (simple version)
+    // Mobile menu toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
-    const navLinks = document.querySelector('.nav-links');
+    const navRight = document.querySelector('.nav-right');
     
     if (mobileToggle) {
         mobileToggle.addEventListener('click', () => {
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '70px';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(10, 10, 15, 0.95)';
-                navLinks.style.backdropFilter = 'blur(10px)';
-                navLinks.style.padding = '20px';
-                navLinks.style.borderBottom = '1px solid var(--neon-green)';
-            }
+            navRight.classList.toggle('active');
         });
     }
 
