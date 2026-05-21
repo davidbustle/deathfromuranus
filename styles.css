@@ -722,6 +722,109 @@ footer p {
     font-size: 0.9rem;
 }
 
+/* --- Blog Page Styles --- */
+.blog-main {
+    padding-top: 120px;
+    padding-bottom: 60px;
+}
+
+.blog-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.blog-date {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.blog-header h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.blog-hero-image {
+    position: relative;
+    width: 100%;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--glass-glow);
+    border: 1px solid var(--glass-border);
+}
+
+.blog-hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.blog-content {
+    font-family: var(--font-body);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.blog-content p {
+    margin-bottom: 25px;
+}
+
+.blog-content h2 {
+    font-family: var(--font-heading);
+    color: var(--text-main);
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.blog-content ul {
+    margin-bottom: 25px;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.blog-content ul li {
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.blog-content ul li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--neon-cyan);
+    font-weight: 700;
+}
+
+.blog-content ul li strong {
+    color: var(--neon-cyan);
+}
+
+.sign-off {
+    font-style: italic;
+    color: var(--neon-pink);
+    margin-top: 40px;
+    font-weight: 600;
+}
+
 /* Animations */
 @keyframes float {
     0% { transform: translateY(0px); }
@@ -810,4 +913,14 @@ footer p {
     
     .avatar-img { width: 250px; height: 250px; }
     .avatar-ring { width: 280px; height: 280px; }
+
+    /* Blog Mobile */
+    .blog-container {
+        padding: 20px;
+        margin: 0 15px;
+    }
+    
+    .blog-header h1 {
+        font-size: 2rem;
+    }
 }
