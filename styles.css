@@ -706,6 +706,12 @@ footer {
     filter: drop-shadow(0 0 10px var(--neon-cyan));
 }
 
+.fa-discord {
+    position: relative;
+    top: 2px;
+    font-size: 1.05em;
+}
+
 footer p {
     color: var(--text-muted);
     font-size: 0.9rem;
