@@ -663,6 +663,217 @@ section {
     text-transform: uppercase;
 }
 
+/* Signup Section */
+.signup-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.signup-container {
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    background: var(--glass-bg);
+    box-shadow: var(--glass-glow);
+}
+
+.signup-intro {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 35px;
+    font-family: var(--font-sub);
+    letter-spacing: 0.5px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.input-group label {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: var(--font-sub);
+    font-weight: 600;
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+/* Floating labels */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -10px;
+    left: 10px;
+    font-size: 0.8rem;
+    background: var(--bg-dark);
+    padding: 0 8px;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    background: rgba(0, 255, 255, 0.02);
+}
+
+/* Interest Selection Tag Styling */
+.interest-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.interest-title {
+    font-family: var(--font-sub);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    color: var(--text-main);
+}
+
+.interest-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.interest-tag {
+    cursor: pointer;
+    position: relative;
+}
+
+.interest-tag input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.interest-tag span {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    font-family: var(--font-sub);
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.interest-tag:hover span {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+    background: rgba(0, 255, 255, 0.05);
+}
+
+.interest-tag input:checked + span {
+    background: rgba(255, 0, 255, 0.1);
+    border-color: var(--neon-pink);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.3);
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5);
+}
+
+/* Submit button state and status messages */
+.signup-btn {
+    align-self: center;
+    min-width: 250px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-loader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.form-message {
+    padding: 15px;
+    border-radius: 4px;
+    font-family: var(--font-sub);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.success-message {
+    background: rgba(0, 255, 0, 0.1);
+    border: 1px solid #00ff00;
+    color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.error-message {
+    background: rgba(255, 0, 0, 0.1);
+    border: 1px solid #ff3333;
+    color: #ff3333;
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+    .form-inputs {
+        grid-template-columns: 1fr;
+    }
+    .interest-tags {
+        justify-content: center;
+    }
+    .signup-btn {
+        width: 100%;
+    }
+}
+
 /* Footer */
 footer {
     background: #050508;

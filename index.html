@@ -153,29 +153,83 @@
                     <i class="fa-solid fa-microchip icon-glow"></i>
                     <h3>CORE PROCESSING</h3>
                     <ul>
-                        <li><span>CPU</span> Intel Core i9-14900K</li>
-                        <li><span>GPU</span> RTX 4090 Cyber Edition</li>
-                        <li><span>RAM</span> 64GB DDR5 6000MHz</li>
+                        <li><span>CPU</span> Intel Core i7-14700K</li>
+                        <li><span>GPU</span> RTX 5070ti 16GB DDR6</li>
+                        <li><span>RAM</span> 32GB DDR5 6000MHz</li>
                     </ul>
                 </div>
                 <div class="resource-card glass-panel">
                     <i class="fa-solid fa-gamepad icon-glow"></i>
                     <h3>PERIPHERALS</h3>
                     <ul>
-                        <li><span>Mouse</span> Logitech G Pro X Superlight</li>
-                        <li><span>Keyboard</span> Custom Neon Mech</li>
-                        <li><span>Headset</span> Astro A50 Wireless</li>
+                        <li><span>Mouse</span> Logitech 502x Lightspeed Hero</li>
+                        <li><span>Keyboard</span> Logitech 915x Lightspeed Low-Pro</li>
+                        <li><span>Headset</span> Steelseries Arctis Nova Pro Wired</li>
                     </ul>
                 </div>
                 <div class="resource-card glass-panel">
-                    <i class="fa-solid fa-sliders icon-glow"></i>
-                    <h3>SETTINGS</h3>
+                    <i class="fa-solid fa-gear icon-glow"></i>
+                    <h3>GEAR</h3>
                     <ul>
-                        <li><span>DPI</span> 800</li>
-                        <li><span>Sens</span> 1.2 in-game</li>
-                        <li><span>Res</span> 2560x1440 @ 240Hz</li>
+                        <li><span>Cam</span> OBSbot Tiny 2 Lite 4k</li>
+                        <li><span>Controller</span> SCUF Envision Pro Wireless</li>
+                        <li><span>Elgato</span> Stream Deck +</li>
+                        <li><span>Pedal</span> Foot Pedal</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+        <!-- Signup Section -->
+        <section id="signup" class="signup-section">
+            <div class="section-header">
+                <h2>JOIN THE <span class="highlight">ABDUCTION</span></h2>
+                <div class="neon-line"></div>
+            </div>
+            <div class="signup-container glass-panel">
+                <p class="signup-intro">Sign up for News, Streaming Times, Giveaways, and exclusive Perks directly to your inbox.</p>
+                <form id="lead-signup-form" class="signup-form">
+                    <div class="form-inputs">
+                        <div class="input-group">
+                            <input type="text" id="signup-name" name="name" required placeholder=" ">
+                            <label for="signup-name">FULL NAME</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="signup-email" name="email" required placeholder=" ">
+                            <label for="signup-email">EMAIL ADDRESS</label>
+                        </div>
+                    </div>
+                    
+                    <div class="interest-selection">
+                        <p class="interest-title">SELECT INTERESTS:</p>
+                        <div class="interest-tags">
+                            <label class="interest-tag">
+                                <input type="checkbox" name="interests" value="News" checked>
+                                <span>NEWS</span>
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" name="interests" value="Streaming Times" checked>
+                                <span>STREAMING TIMES</span>
+                            </label>
+                            <label class="interest-tag">
+                                <input type="checkbox" name="interests" value="Giveaways & Perks" checked>
+                                <span>GIVEAWAYS & PERKS</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn primary-btn signup-btn">
+                        <span class="btn-text"><i class="fa-solid fa-satellite-dish"></i> JOIN TRANSMISSION</span>
+                        <span class="btn-loader hidden"><i class="fa-solid fa-circle-notch fa-spin"></i> TRANSMITTING...</span>
+                    </button>
+                    
+                    <div class="form-message success-message hidden">
+                        <i class="fa-solid fa-circle-check"></i> TRANSMISSION RECEIVED. WELCOME ABOARD!
+                    </div>
+                    <div class="form-message error-message hidden">
+                        <i class="fa-solid fa-circle-exclamation"></i> TRANSMISSION FAILED. PLEASE TRY AGAIN.
+                    </div>
+                </form>
             </div>
         </section>
     </main>

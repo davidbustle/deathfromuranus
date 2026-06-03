@@ -77,4 +77,77 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.transition = "opacity 0.8s ease-out, transform 0.8s ease-out";
         observer.observe(section);
     });
+
+    // Lead Signup Form handler
+    const signupForm = document.getElementById('lead-signup-form');
+    if (signupForm) {
+        // Place webhook URL here. The user will provide their GoHighLevel webhook.
+        const GOHIGHLEVEL_WEBHOOK_URL = 'YOUR_GOHIGHLEVEL_WEBHOOK_URL_HERE';
+
+        signupForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const nameInput = document.getElementById('signup-name');
+            const emailInput = document.getElementById('signup-email');
+            const submitBtn = signupForm.querySelector('.signup-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoader = submitBtn.querySelector('.btn-loader');
+            const successMsg = signupForm.querySelector('.success-message');
+            const errorMsg = signupForm.querySelector('.error-message');
+
+            // Hide previous messages
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            // Gather selected interests
+            const checkedCheckboxes = signupForm.querySelectorAll('input[name="interests"]:checked');
+            const interests = Array.from(checkedCheckboxes).map(cb => cb.value);
+
+            // Prepare payload
+            const payload = {
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                interests: interests
+            };
+
+            // Loading state
+            submitBtn.disabled = true;
+            btnText.classList.add('hidden');
+            btnLoader.classList.remove('hidden');
+
+            try {
+                // If the webhook is not configured yet, log it, but attempt the request anyway.
+                // If it is a placeholder string, we'll simulate success locally.
+                if (GOHIGHLEVEL_WEBHOOK_URL.includes('YOUR_GOHIGHLEVEL_WEBHOOK_URL_HERE')) {
+                    console.warn('GoHighLevel Webhook URL is not configured. Simulating successful submission.');
+                    await new Promise(resolve => setTimeout(resolve, 1500)); // Simulate delay
+                    successMsg.classList.remove('hidden');
+                    signupForm.reset();
+                } else {
+                    const response = await fetch(GOHIGHLEVEL_WEBHOOK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (response.ok) {
+                        successMsg.classList.remove('hidden');
+                        signupForm.reset();
+                    } else {
+                        throw new Error('Server responded with status: ' + response.status);
+                    }
+                }
+            } catch (error) {
+                console.error('Submission error:', error);
+                errorMsg.classList.remove('hidden');
+            } finally {
+                // Restore button state
+                submitBtn.disabled = false;
+                btnText.classList.remove('hidden');
+                btnLoader.classList.add('hidden');
+            }
+        });
+    }
 });
