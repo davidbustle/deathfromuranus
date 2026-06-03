@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const signupForm = document.getElementById('lead-signup-form');
     if (signupForm) {
         // Place webhook URL here. The user will provide their GoHighLevel webhook.
-        const GOHIGHLEVEL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/DAqjBo0Yp526LGicWLef/webhook-trigger/fca55af0-9283-4b95-9770-2675581765d4';
+        const GOHIGHLEVEL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/DAqjBo0Yp526LGicWLef/webhook-trigger/69a76247-6210-48c2-b059-0b7e23a7b7e9';
 
         signupForm.addEventListener('submit', async (e) => {
             e.preventDefault();
