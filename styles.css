@@ -486,6 +486,8 @@ section {
 
 .video-wrapper {
     flex: 2;
+    width: 100%;
+    max-width: 100%;
     position: relative;
     border-radius: 12px;
     overflow: hidden;
@@ -1106,6 +1108,8 @@ footer p {
     .social-grid { grid-template-columns: repeat(2, 1fr); }
     
     .video-container { flex-direction: column; padding: 20px; }
+    .video-wrapper { width: 100%; }
+    .video-info { width: 100%; text-align: center; }
     
     .about-content { flex-direction: column; text-align: center; }
     .stats-grid { max-width: 400px; margin: 0 auto; }
