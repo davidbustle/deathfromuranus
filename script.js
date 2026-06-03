@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const nameInput = document.getElementById('signup-name');
             const emailInput = document.getElementById('signup-email');
+            const phoneInput = document.getElementById('signup-phone');
             const submitBtn = signupForm.querySelector('.signup-btn');
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoader = submitBtn.querySelector('.btn-loader');
@@ -107,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const payload = {
                 name: nameInput.value.trim(),
                 email: emailInput.value.trim(),
+                phone: phoneInput.value.trim(),
                 interests: interests
             };
 
